@@ -3,12 +3,24 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useEffect, useState } from "react";
 
 export const DashboardHeader = () => {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState("User");
+
+  useEffect(() => {
+    // Get user name from mock user data
+    const mockUser = localStorage.getItem("mockUser");
+    if (mockUser) {
+      const userData = JSON.parse(mockUser);
+      setUserName(userData.name || "User");
+    }
+  }, []);
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
+    // Clear mock user session
+    localStorage.removeItem("mockUser");
     toast.success("Erfolgreich abgemeldet");
     navigate("/");
   };
@@ -21,7 +33,7 @@ export const DashboardHeader = () => {
             <Sparkles className="w-5 h-5 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">Creator Dashboard</h1>
+            <h1 className="text-xl font-bold">Hallo {userName}</h1>
             <p className="text-sm text-muted-foreground">Verwalte deine Einnahmen</p>
           </div>
         </div>

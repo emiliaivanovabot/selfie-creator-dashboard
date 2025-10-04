@@ -21,27 +21,34 @@ const Auth = () => {
     setLoading(true);
 
     try {
+      // Mock authentication for testing
       if (isLogin) {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-        if (error) throw error;
-        toast.success("Erfolgreich angemeldet!");
-        navigate("/dashboard");
+        // Check for test user credentials
+        if (email === "test@test.de" && password === "testtest") {
+          // Store mock user session
+          localStorage.setItem("mockUser", JSON.stringify({
+            email: "test@test.de",
+            name: "Emilia Ivanova",
+            id: "test-user-123"
+          }));
+          toast.success("Erfolgreich angemeldet!");
+          navigate("/dashboard");
+        } else {
+          throw new Error("Ungültige Anmeldedaten");
+        }
       } else {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/dashboard`,
-            data: {
-              name,
-            },
-          },
-        });
-        if (error) throw error;
-        toast.success("Account erstellt! Bitte bestätige deine E-Mail.");
+        // Mock registration - just store the user
+        if (email && password && password.length >= 6) {
+          localStorage.setItem("mockUser", JSON.stringify({
+            email,
+            name: name || "Neuer User",
+            id: `user-${Date.now()}`
+          }));
+          toast.success("Account erfolgreich erstellt!");
+          navigate("/dashboard");
+        } else {
+          throw new Error("Bitte alle Felder ausfüllen (Passwort min. 6 Zeichen)");
+        }
       }
     } catch (error: any) {
       toast.error(error.message || "Ein Fehler ist aufgetreten");
