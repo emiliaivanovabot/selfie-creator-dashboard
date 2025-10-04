@@ -7,49 +7,7 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  /* Light Mode (Default) */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 328 86% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 263 70% 50%;
-
-    /* Chart colors for data visualization - Light theme optimized */
-    --chart-1: 160 84% 39%;
-    --chart-2: 346 87% 43%;
-    --chart-3: 221 83% 53%;
-    --chart-4: 262 83% 58%;
-    --chart-5: 43 74% 49%;
-  }
-
-  /* Dark Mode */
-  .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -62,11 +20,11 @@ All colors MUST be HSL.
     --primary: 263 70% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 18%;
+    --secondary: 240 5% 15%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 18%;
-    --muted-foreground: 240 5% 70%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 64%;
 
     --accent: 328 86% 60%;
     --accent-foreground: 0 0% 100%;
@@ -77,9 +35,11 @@ All colors MUST be HSL.
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 18%;
-    --input: 240 10% 18%;
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
     --ring: 263 70% 50%;
+
+    --radius: 0.75rem;
 
     /* Chart colors for data visualization - Dark theme optimized */
     --chart-1: 160 84% 55%;
@@ -87,15 +47,6 @@ All colors MUST be HSL.
     --chart-3: 221 83% 70%;
     --chart-4: 262 83% 75%;
     --chart-5: 43 74% 65%;
-  }
-
-  * {
-    border-radius: hsl(var(--radius));
-  }
-
-  body {
-    color: hsl(var(--foreground));
-    background: hsl(var(--background));
 
     /* Enhanced gradient system */
     --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(328 86% 60%));
