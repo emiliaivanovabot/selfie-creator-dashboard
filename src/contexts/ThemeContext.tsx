@@ -29,8 +29,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     if (savedTheme === 'light' || savedTheme === 'dark') {
       return savedTheme;
     }
-    // Default to light theme
-    return 'light';
+    // Default to dark theme
+    return 'dark';
   });
 
   const setTheme = (newTheme: Theme) => {
