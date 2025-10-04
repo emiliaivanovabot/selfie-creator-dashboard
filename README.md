@@ -1,73 +1,159 @@
-# Welcome to your Lovable project
+# Selfie Creator Dashboard 📊
 
-## Project info
+Ein Creator/Model Dashboard für AI-Selfie-Plattformen mit Einnahmen-Tracking und Analytics für beliebte Szenen und Posen.
 
-**URL**: https://lovable.dev/projects/ffd8419a-5722-4521-bb18-96bd9f542ab6
+![Dashboard Preview](https://img.shields.io/badge/Status-Live-brightgreen)
+![React](https://img.shields.io/badge/React-18.3.1-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue)
+![Vite](https://img.shields.io/badge/Vite-5.4.19-purple)
 
-## How can I edit this code?
+## 🎯 Features
 
-There are several ways of editing your application.
+### 💰 **Einnahmen & Analytics**
+- **Tageseinnahmen** mit Trend-Anzeige
+- **Wocheneinnahmen** und Performance-Metriken
+- **Verkaufte Sets** und Conversion-Rate
+- **Revenue Chart** mit zeitlichem Verlauf
 
-**Use Lovable**
+### 📊 **Beliebte Szenen Analytics**
+- 🏖️ **Strand bei Sonnenuntergang** - 1,247 Generierungen (23.4%)
+- 🪩 **Nachtclub** - 1,089 Generierungen (20.5%)
+- 🕯️ **Romantisches Dinner** - 876 Generierungen (16.5%)
+- 🏙️ **Dachterrasse** - 654 Generierungen (12.3%)
+- 🎪 **Musikfestival** - 432 Generierungen (8.1%)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ffd8419a-5722-4521-bb18-96bd9f542ab6) and start prompting.
+### 💕 **Beliebte Posen Analytics**
+- 😊 **Zusammen Lächeln** - 1,456 mal gewählt (27.3%)
+- 😘 **Kuss auf die Wange** - 1,234 mal gewählt (23.2%)
+- 🤗 **Freundschaftliche Umarmung** - 987 mal gewählt (18.5%)
+- 🤝 **Händchen halten** - 765 mal gewählt (14.4%)
+- 😂 **Zusammen lachen** - 543 mal gewählt (10.2%)
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📈 **Business Insights**
+- **Top Performance:** Strand-Szenen generieren 23% mehr Einnahmen
+- **Fan Favorit:** "Zusammen Lächeln" ist die beliebteste Pose
+- **Engagement:** Romantische Szenen haben 85% Wiederkehr-Rate
+- **Durchschnitt:** 4,2 Bilder pro Session
 
-**Use your preferred IDE**
+## 🚀 Live Demo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Das Dashboard läuft auf **http://localhost:3000**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Test-Login:
+- **E-Mail:** `test@test.de`
+- **Passwort:** `testtest`
+- **Name:** Emilia Ivanova
 
-Follow these steps:
+## 🛠️ Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend:** React 18.3.1 + TypeScript
+- **Build Tool:** Vite 5.4.19
+- **UI Framework:** shadcn/ui + Tailwind CSS
+- **Charts:** Recharts für interaktive BarCharts
+- **Icons:** Lucide React
+- **Routing:** React Router DOM
+- **Notifications:** Sonner (Toast)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📦 Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# Repository klonen
+git clone https://github.com/emiliaivanovabot/selfie-creator-dashboard.git
+cd selfie-creator-dashboard
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Dependencies installieren
+npm install
+
+# Development Server starten
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Das Dashboard ist dann verfügbar unter: **http://localhost:3000**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎨 Design System
 
-**Use GitHub Codespaces**
+### **Komponenten-Architektur:**
+```
+src/
+├── components/
+│   ├── dashboard/
+│   │   ├── DashboardHeader.tsx     # Personalisierte Begrüßung
+│   │   ├── StatsOverview.tsx       # Einnahmen-Karten
+│   │   ├── RevenueChart.tsx        # Umsatz-Verlauf
+│   │   ├── PopularScenes.tsx       # Szenen-Analytics (NEU)
+│   │   ├── PopularPoses.tsx        # Posen-Analytics (NEU)
+│   │   └── ProfileSection.tsx      # Creator-Profil
+│   └── ui/                         # shadcn/ui Komponenten
+├── pages/
+│   ├── Auth.tsx                    # Mock-Authentifizierung
+│   └── Dashboard.tsx               # Haupt-Dashboard
+└── hooks/
+    └── use-mobile.tsx              # Responsive Hooks
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### **Design-Prinzipien:**
+- **Konsistente Karten:** `gradient-card border-primary/10 shadow-card`
+- **Interactive Charts:** Hover-Effekte und Tooltips
+- **Responsive Layout:** Mobile-First Design
+- **Emoji-Integration:** Visuelle Szenen/Posen-Darstellung
+- **Performance-Fokus:** Optimierte Ladezeiten
 
-## What technologies are used for this project?
+## 📊 Dashboard Layout
 
-This project is built with:
+1. **Header:** Personalisierte Begrüßung "Hallo Emilia Ivanova"
+2. **Stats Overview:** 4 Einnahmen-Karten (Heute, Woche, Sets, Conversion)
+3. **Analytics Row 1:** Revenue Chart + Beliebte Szenen
+4. **Analytics Row 2:** Beliebte Posen + Performance Insights
+5. **Profile Section:** Creator-Informationen und Einstellungen
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🔐 Authentifizierung
 
-## How can I deploy this project?
+**Mock-System** für Development:
+- Keine externe Abhängigkeiten
+- LocalStorage-basierte Sessions
+- Einfacher Login/Logout Flow
 
-Simply open [Lovable](https://lovable.dev/projects/ffd8419a-5722-4521-bb18-96bd9f542ab6) and click on Share -> Publish.
+**Production-Ready:**
+- Einfach durch echte Auth-Provider ersetzbar
+- Session-Management vorbereitet
+- Sichere Logout-Funktionalität
 
-## Can I connect a custom domain to my Lovable project?
+## 🎯 Zielgruppe
 
-Yes, you can!
+**Creator/Models** die AI-Selfie-Plattformen nutzen:
+- **Einnahmen-Tracking:** Tägliche/wöchentliche Performance
+- **Content-Optimierung:** Welche Szenen/Posen funktionieren
+- **Business-Insights:** Datengetriebene Entscheidungen
+- **Fan-Engagement:** Beliebtheits-Trends verstehen
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🚀 Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+# Build für Production
+npm run build
+
+# Preview des Builds
+npm run preview
+```
+
+**Deployment-Optionen:**
+- Vercel (empfohlen für React/Vite)
+- Netlify
+- GitHub Pages
+- Eigener Server
+
+## 📝 Lizenz
+
+MIT License - Siehe [LICENSE](LICENSE) für Details.
+
+## 🤝 Contributing
+
+Pull Requests sind willkommen! Für größere Änderungen bitte zuerst ein Issue öffnen.
+
+## 📞 Support
+
+Bei Fragen oder Problemen bitte ein GitHub Issue erstellen.
+
+---
+
+**Entwickelt für Creator, die ihre AI-Selfie-Performance optimieren möchten** 🎨✨
